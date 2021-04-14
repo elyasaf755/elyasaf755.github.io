@@ -41,4 +41,6 @@ async function changeImage() {
 
 
 
-init();
+init().then(() => {
+    document.getElementById("status").innerHTML = "Done. You can start predicting";
+})
