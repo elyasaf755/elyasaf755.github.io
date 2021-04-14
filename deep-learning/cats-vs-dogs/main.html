@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cats-vs-dogs</title>
+
+    <!-- import tensorflow.js-->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+</head>
+<body>
+    <!-- TODO: 
+    <div id="loader">
+        <div class="spinner-grow" role="status" style="width: 12rem; height: 12rem;">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <p>Loading trained model...</p>
+    </div>
+    -->
+    <div id="classifier">
+        <h1>Cats Vs. Dogs Classifier</h1>
+
+        <div>
+            <p>First, click on the 'Train' button.</p>
+            <button type="button" id="trainBtn" onclick="train()">Train</button>
+        </div>
+
+        <br>
+        <div>
+            <img id="img" src="data-set/test_set/cats/cat.4001.jpg" width=375 height=375 />
+
+            <div>
+                <label for="file-uploader">
+                    <input id="file-uploader" type="file" onchange="changeImage()" accept="image/jpeg, image/png">
+                </label>
+                
+                <button type="button" id="predictBtn" onclick="predict()">Predict</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div id="prediction">Prediction Here</div>
+        
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
