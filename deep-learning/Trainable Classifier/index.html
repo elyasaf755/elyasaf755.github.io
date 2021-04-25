@@ -1,0 +1,83 @@
+<!DOCTYPE  html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop or Browse: File Upload | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+</head>
+<body>
+  <div id="classes">
+    <div id="div-class-0" class="drag-area">
+      <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+      <header>Drag & Drop to Upload Images</header>
+      <span>OR</span>
+      <button id="browse-btn-0">Browse File</button>
+      <input id="files-uploader-0" accept="image/*" multiple type="file" hidden>
+      <br>
+      <input id="label-0" type="text" placeholder="Class A" value="A">
+    </div>
+  
+    <div id="div-class-1" class="drag-area">
+      <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+      <header>Drag & Drop to Upload Images</header>
+      <span>OR</span>
+      <button id="browse-btn-1">Browse Files</button>
+      <input id="files-uploader-1" accept="image/*" multiple type="file" hidden>
+      <br>
+      <input id="label-1" type="text" placeholder="Class B" value="B">
+    </div>
+  </div>
+
+  <div id="add-class-div">
+    <input id="add-class-name" type="text" placeholder="Class Name">
+    <button class="add-class-btn" onclick="addClass()">Add Class</button>
+  </div>
+
+  <br>
+
+  <div>
+    <button onclick="train()">Train Model</button>
+    <h3 id="status">Loading model, please wait...</p>
+  </div>
+
+  <div>
+    <canvas id="gallery-canvas" alt="" height="224" width="224">
+  </div>
+
+  <br>
+
+  <!-- Train -->
+  <div id="console">Predictions Here</div>
+  
+  <br>
+  <br>
+  
+  <div class="prediction">
+    <img id="img" height="224" width="224" hidden>
+    <canvas id="canvas" height="224" width="224"></canvas>
+
+    <div id="div-to-predict" class="drag-area">
+      <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+      <header>Drag & Drop to Predict</header>
+      <span>OR</span>
+      <button>Browse File</button>
+      <input id="input-to-predict" accept="image/*" multiple type="file" hidden>
+    </div>
+  </div>
+  
+  
+
+  <!-- Load index.js after the content of the page -->
+  <script src="index.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

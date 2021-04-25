@@ -39,8 +39,6 @@ async function changeImage() {
     img.src = URL.createObjectURL(uploadedImage);
 }
 
-
-
 init().then(() => {
     document.getElementById("status").innerHTML = "Done. You can start predicting";
 })

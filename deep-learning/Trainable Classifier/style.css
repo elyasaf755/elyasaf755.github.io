@@ -1,0 +1,81 @@
+*{
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background: #418dff;
+}
+
+button{
+  padding: 10px 25px;
+  font-size: 10px;
+  font-weight: 250;
+  border: none;
+  outline: none;
+  background: #fff;
+  border-radius: 2.5px;
+  cursor: pointer;
+}
+
+input {
+  padding: 5px;
+  height: 30px;
+  border-radius: 1px;
+  border: hotpink;
+  border-width: 3px;
+  margin: 10px 10px 10px 0px;
+}
+
+div {
+  margin-left: 10px;
+}
+
+#classes{
+  display: inline-block;
+}
+
+#add-class-div{
+  display: block;
+  display: flex;
+  align-items: center;
+}
+
+.drag-area {
+  border: 2px dashed #fff;
+  border-radius: 2.5px;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  float: left;
+
+  margin: 10px 10px 10px 0px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.drag-area.active{
+  border: 2px solid #fff;
+}
+
+.drag-area .icon{
+  font-size: 50px;
+  color: #fff;
+}
+
+.drag-area header{
+  font-size: 15px;
+  font-weight: 250;
+  color: #fff;
+}
+
+.drag-area span{
+  font-size: 12.5px;
+  font-weight: 250;
+  color: #fff;
+  margin: 10px 0 15px 0;
+}
+
