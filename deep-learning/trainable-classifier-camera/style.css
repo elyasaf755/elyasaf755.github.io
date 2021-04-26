@@ -29,14 +29,23 @@ button {
     margin: 0px 5px 5px 0px;
 }
 
+.video-div {
+    text-align: center;
+    display: block;
+    margin: 40px;
+}
+
 .add-btns-div {
     display: flex;
     margin: 0px 5px 5px 0px;
+    justify-content: center;
 }
 
 #add-class-div {
-    display: block;
+    display: flex;
     margin-top: 20px;
+    justify-content: center;
+    text-align: center;
 }
 
 #add-class-div button {
@@ -49,6 +58,7 @@ button {
 #add-class-div input {
     display: flex;
     margin-right: 5px;
+    margin-top: 20px;
     width: 215px;
     height: 42px;
     float: left;
