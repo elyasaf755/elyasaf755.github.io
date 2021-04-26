@@ -10,65 +10,62 @@ body {
 
 input {
     padding: 5px;
-    width: 105.59px;
-    height: 30px;
-    font-size: 20px;
+    width: 15rem;
+    height: 5rem;
+    font-size: 3rem;
     text-align: center;
 }
+
 button {
     display: block;
     padding: 10px 25px;
-    font-size: 20px;
+    font-size: 3rem;
     font-weight: 250;
     border: none;
     outline: none;
     background: #fff;
     border-radius: 2.5px;
     cursor: pointer;
-    width: 105.59px;
-    margin: 0px 5px 5px 0px;
+    width: 15rem;
+    margin: .5rem;
 }
 
 video {
-    min-width: 100%; 
-    width: auto; 
-
-    -webkit-transform: scaleX(-1);
+    height: 33%;
     transform: scaleX(-1);
 }
 
 .video-div {
-    display: block;
-    min-height: 33%;
-    min-width: 100%; 
+    display: inline-block;
+    text-align: center;
 }
 
 .add-btns-div {
     display: flex;
-    margin: 0px 5px 5px 0px;
     justify-content: center;
+    text-align: center;
+    height: auto;
 }
 
 #add-class-div {
     display: flex;
-    margin-top: 20px;
+    margin: 3rem;
     justify-content: center;
     text-align: center;
 }
 
 #add-class-div button {
     display: block;
-    margin-top: 20px;
+    margin: 1rem;
     width: auto;
     height: auto;
 }
 
 #add-class-div input {
     display: flex;
-    margin-right: 5px;
-    margin-top: 20px;
-    width: 215px;
-    height: 42px;
+    margin: 1rem;
+    width: 20rem;
+    height: 5rem;
     float: left;
     border-radius: 2.5px;
     border: none;
