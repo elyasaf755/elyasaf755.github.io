@@ -26,8 +26,8 @@ button {
     background: #fff;
     border-radius: 2.5px;
     cursor: pointer;
-    width: 15rem;
-    margin: .5rem;
+    width: 15vh;
+    margin: .5vh;
 }
 
 video {
@@ -64,8 +64,8 @@ video {
 #add-class-div input {
     display: flex;
     margin: 1rem;
-    width: 20rem;
-    height: 5rem;
+    width: 20vh;
+    height: 5vh;
     float: left;
     border-radius: 2.5px;
     border: none;
