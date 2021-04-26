@@ -35,8 +35,8 @@ async function app() {
     };
 
     // When clicking a button, add an example for that class.
-    document.getElementById('class-a').addEventListener('click', () => addExample(0));
-    document.getElementById('class-b').addEventListener('click', () => addExample(1));
+    document.getElementById('class-0').addEventListener('click', () => addExample(0));
+    document.getElementById('class-1').addEventListener('click', () => addExample(1));
 
     while (true) {
         if (classifier.getNumClasses() > 0) {
