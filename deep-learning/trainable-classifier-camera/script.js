@@ -17,8 +17,8 @@ function addClass() {
     const div = document.getElementById("add-btns");
 
     const ele = `<div class="add-div">
-    <button id="class-${classId}">Add ${className}</button>
-    <input id="input-${classId}" class="input-class" type="text" placeholder="Class ${classId}" value="${className}">
+    <button id="class-${classId}" class="add-btn">Add ${className}</button>
+    <input id="input-${classId}" class="add-input" type="text" placeholder="Class ${classId}" value="${className}">
   </div>`;
 
     div.innerHTML += ele;

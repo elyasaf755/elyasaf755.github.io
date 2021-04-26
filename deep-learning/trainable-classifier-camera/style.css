@@ -34,8 +34,16 @@ video {
     width: 85%;
 }
 
-.input-class {
+.add-btn {
+    font-weight: bold;
+    height: 10rem;
+    width: 15rem;
+}
+
+.add-input {
     color: gray;
+    height: 5rem;
+    width: 15rem;
 }
 
 .video-div {
