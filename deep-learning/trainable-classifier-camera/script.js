@@ -25,7 +25,7 @@ function addClass() {
         classNames.push(className);
     }
 
-    for (let i = 0; i < classNames.length; ++i){
+    for (let i = 0; i < classNames.length; ++i) {
         addListeners(i);
     }
 }

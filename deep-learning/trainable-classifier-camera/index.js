@@ -2,6 +2,22 @@ const classifier = knnClassifier.create();
 
 const webcamElement = document.getElementById('webcam');
 
+let constraints = {
+    facingMode: "user",
+    resizeWidth: 224,
+    resizeHeight: 224
+};
+
+if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
+    constraints = {
+        facingMode: "environment",
+        resizeWidth: 224,
+        resizeHeight: 224
+    };
+
+    alert("supports");
+}
+
 const classNames = ['A', 'B'];
 
 let net;
@@ -39,17 +55,17 @@ async function app() {
     while (true) {
         if (classifier.getNumClasses() > 0) {
             const img = await webcam.capture();
-            
+
             // Get the activation from mobilenet from the webcam.
             const activation = net.infer(img, 'conv_preds');
             // Get the most likely class and confidence from the classifier module.
             const result = await classifier.predictClass(activation);
-            
+
             document.getElementById('console').innerText = `
                 prediction: ${classNames[result.label]}\n
                 probability: ${result.confidences[result.label]}
             `;
-            
+
             // Dispose the tensor to release the memory.
             img.dispose();
         }
