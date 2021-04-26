@@ -10,8 +10,8 @@ body {
 
 input {
     padding: 5px;
-    width: 15rem;
-    height: 5rem;
+    width: 15vh;
+    height: 5vh;
     font-size: 3rem;
     text-align: center;
 }

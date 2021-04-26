@@ -6,6 +6,8 @@ const classNames = ['A', 'B'];
 
 let net;
 
+let addExample;
+
 async function app() {
     console.log('Loading mobilenet..');
 
@@ -19,7 +21,7 @@ async function app() {
 
     // Reads an image from the webcam and associates it with a specific class
     // index.
-    const addExample = async classId => {
+    addExample = async classId => {
         // Capture an image from the web camera.
         const img = await webcam.capture();
 
@@ -33,10 +35,6 @@ async function app() {
         // Dispose the tensor to release the memory.
         img.dispose();
     };
-
-    // When clicking a button, add an example for that class.
-    document.getElementById('class-0').addEventListener('click', () => addExample(0));
-    document.getElementById('class-1').addEventListener('click', () => addExample(1));
 
     while (true) {
         if (classifier.getNumClasses() > 0) {

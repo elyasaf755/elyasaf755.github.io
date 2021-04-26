@@ -15,6 +15,34 @@ function addClass() {
 
     div.innerHTML += ele;
 
+    input.value = '';
     input.setAttribute('value', '');
 
+    if (className == '') {
+        classNames.push(classId);
+    }
+    else {
+        classNames.push(className);
+    }
+
+    for (let i = 0; i < classNames.length; ++i){
+        addListeners(i);
+    }
 }
+
+function addListeners(classId) {
+    const inputTxt = document.getElementById(`input-${classId}`);
+    const button = document.getElementById(`class-${classId}`);
+
+    inputTxt.addEventListener("input", () => {
+        classNames[classId] = inputTxt.value;
+        inputTxt.placeholder = `Class ${inputTxt.value}`;
+        inputTxt.setAttribute('value', inputTxt.value);
+        button.innerText = `Add ${inputTxt.value}`;
+    });
+
+    button.addEventListener('click', () => addExample(classId));
+}
+
+addListeners(0);
+addListeners(1);
