@@ -32,7 +32,8 @@ button {
 
 video {
     width: 85%;
-    /*transform: scaleX(-1);*/
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 
