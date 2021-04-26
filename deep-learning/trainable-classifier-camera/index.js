@@ -13,12 +13,6 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
     facingModeIndex = 1;
 }
 
-let webcamConfig = {
-    facingMode: facingMode,
-    resizeWidth: 224,
-    resizeHeight: 224
-};
-
 const classNames = ['A', 'B'];
 
 let net;
@@ -31,6 +25,13 @@ async function app() {
     // Load the model.
     net = await mobilenet.load();
     console.log('Successfully loaded model');
+
+    // define webcam settings
+    const webcamConfig = {
+        facingMode: facingMode,
+        resizeWidth: 224,
+        resizeHeight: 224
+    };
 
     // Create an object from Tensorflow.js data API which could capture image 
     // from the web camera as Tensor.
@@ -70,7 +71,7 @@ async function app() {
             // Dispose the tensor to release the memory.
             img.dispose();
         }
-        
+
         await tf.nextFrame();
     }
 }
