@@ -32,12 +32,14 @@ button {
 video {
     min-width: 100%; 
     width: auto; 
+
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .video-div {
-    text-align: center;
     display: block;
-    height: 884px;
+    min-height: 33%;
     min-width: 100%; 
 }
 
