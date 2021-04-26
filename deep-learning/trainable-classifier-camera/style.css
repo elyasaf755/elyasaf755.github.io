@@ -38,6 +38,7 @@ video {
     text-align: center;
     display: block;
     height: 884px;
+    min-width: 100%; 
 }
 
 .add-btns-div {
