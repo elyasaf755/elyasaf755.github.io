@@ -16,16 +16,10 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
 const classNames = ['A', 'B'];
 
 let net;
-
 let addExample;
+let webcam;
 
-async function app() {
-    console.log('Loading mobilenet..');
-
-    // Load the model.
-    net = await mobilenet.load();
-    console.log('Successfully loaded model');
-
+async function loadWebcam(){
     // define webcam settings
     const webcamConfig = {
         facingMode: facingMode,
@@ -35,7 +29,18 @@ async function app() {
 
     // Create an object from Tensorflow.js data API which could capture image 
     // from the web camera as Tensor.
-    const webcam = await tf.data.webcam(webcamElement, webcamConfig);
+    webcam = await tf.data.webcam(webcamElement, webcamConfig);
+}
+
+async function app() {
+    console.log('Loading mobilenet..');
+
+    // Load the model.
+    net = await mobilenet.load();
+    console.log('Successfully loaded model');
+
+    // loads the webcam
+    await loadWebcam();
 
     // Reads an image from the webcam and associates it with a specific class
     // index.

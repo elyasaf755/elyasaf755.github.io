@@ -3,12 +3,13 @@ const addClassBtn = document.getElementById('add-class-btn');
 const switchBtn = document.getElementById('changeCameraBtn');
 
 addClassBtn.onclick = () => addClass();
-switchBtn.onclick = () => {
+switchBtn.onclick = async () => {
     run = false;
     facingModeIndex = 1 - facingModeIndex;
     facingMode = modes[facingModeIndex];
+    await loadWebcam();
     run = true;
-    app();
+    await app();
 }
 
 function addClass() {
