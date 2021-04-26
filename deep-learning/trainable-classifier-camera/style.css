@@ -35,9 +35,17 @@ video {
     transform: scaleX(-1);
 }
 
+
+
 .video-div {
-    display: inline-block;
+    display: block;
     text-align: center;
+    width: 100%;
+}
+
+.bot-div {
+    display: block;
+    justify-content: center;
 }
 
 .add-btns-div {
@@ -45,6 +53,16 @@ video {
     justify-content: center;
     text-align: center;
     height: auto;
+}
+
+.change-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#console {
+    font-size: 200%;
 }
 
 #add-class-div {
@@ -64,9 +82,14 @@ video {
 #add-class-div input {
     display: flex;
     margin: 1rem;
-    width: 20vh;
-    height: 5vh;
+    width: 40vh;
+    height: 8vh;
     float: left;
     border-radius: 2.5px;
     border: none;
+}
+
+#btnChangeCamera {
+    font-size: 2rem;
+    text-align: center;
 }

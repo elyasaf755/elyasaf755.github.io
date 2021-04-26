@@ -2,21 +2,17 @@ const classifier = knnClassifier.create();
 
 const webcamElement = document.getElementById('webcam');
 
-let constraints = {
-    facingMode: "user",
+let facingMode = "user";
+
+if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
+    facingMode = "environment";
+}
+
+let webcamConfig = {
+    facingMode: facingMode,
     resizeWidth: 224,
     resizeHeight: 224
 };
-
-if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-    constraints = {
-        facingMode: "environment",
-        resizeWidth: 224,
-        resizeHeight: 224
-    };
-
-    alert("supports");
-}
 
 const classNames = ['A', 'B'];
 
@@ -33,7 +29,7 @@ async function app() {
 
     // Create an object from Tensorflow.js data API which could capture image 
     // from the web camera as Tensor.
-    const webcam = await tf.data.webcam(webcamElement, constraints);
+    const webcam = await tf.data.webcam(webcamElement, webcamConfig);
 
     // Reads an image from the webcam and associates it with a specific class
     // index.
@@ -62,7 +58,7 @@ async function app() {
             const result = await classifier.predictClass(activation);
 
             document.getElementById('console').innerText = `
-                prediction: ${classNames[result.label]}\n
+                I see ${classNames[result.label]}\n
                 probability: ${result.confidences[result.label]}
             `;
 
