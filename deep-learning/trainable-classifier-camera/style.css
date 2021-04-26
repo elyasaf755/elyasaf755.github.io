@@ -31,8 +31,8 @@ button {
 }
 
 video {
-    height: 33%;
-    transform: scaleX(-1);
+    width: 85%;
+    /*transform: scaleX(-1);*/
 }
 
 
@@ -40,7 +40,6 @@ video {
 .video-div {
     display: block;
     text-align: center;
-    width: 100%;
 }
 
 .bot-div {

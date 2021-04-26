@@ -2,10 +2,15 @@ const classifier = knnClassifier.create();
 
 const webcamElement = document.getElementById('webcam');
 
+const modes = ['user', 'environment'];
+
 let facingMode = "user";
+let facingModeIndex = 0;
+let run = true;
 
 if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
     facingMode = "environment";
+    facingModeIndex = 1;
 }
 
 let webcamConfig = {
@@ -48,7 +53,7 @@ async function app() {
         img.dispose();
     };
 
-    while (true) {
+    while (run) {
         if (classifier.getNumClasses() > 0) {
             const img = await webcam.capture();
 
@@ -65,7 +70,7 @@ async function app() {
             // Dispose the tensor to release the memory.
             img.dispose();
         }
-
+        
         await tf.nextFrame();
     }
 }

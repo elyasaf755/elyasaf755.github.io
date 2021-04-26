@@ -1,7 +1,15 @@
 const input = document.getElementById('add-class-input');
 const addClassBtn = document.getElementById('add-class-btn');
+const switchBtn = document.getElementById('changeCameraBtn');
 
 addClassBtn.onclick = () => addClass();
+switchBtn.onclick = () => {
+    run = false;
+    facingModeIndex = 1 - facingModeIndex;
+    facingMode = modes[facingModeIndex];
+    run = true;
+    app();
+}
 
 function addClass() {
     const className = input.value;
