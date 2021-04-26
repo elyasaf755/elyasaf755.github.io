@@ -34,7 +34,9 @@ video {
     width: 85%;
 }
 
-
+.input-class {
+    color: gray;
+}
 
 .video-div {
     display: block;
