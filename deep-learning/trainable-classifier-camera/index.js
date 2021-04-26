@@ -33,7 +33,7 @@ async function app() {
 
     // Create an object from Tensorflow.js data API which could capture image 
     // from the web camera as Tensor.
-    const webcam = await tf.data.webcam(webcamElement);
+    const webcam = await tf.data.webcam(webcamElement, constraints);
 
     // Reads an image from the webcam and associates it with a specific class
     // index.
